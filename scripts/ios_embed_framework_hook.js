@@ -26,6 +26,8 @@ module.exports = function (ctx) {
 
     var proj = findProj();
     addFramework("WikitudeSDK.framework", proj);
+    proj.addBuildProperty("VALID_ARCHS",'"arm64 arm64e"');
+
     //save proj file
     fs.writeFile(proj.filepath, proj.writeSync(), 'utf8', function (err) {
         if (err) {
